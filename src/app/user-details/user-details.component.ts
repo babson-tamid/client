@@ -31,7 +31,7 @@ export class UserDetailsComponent implements OnInit {
   
 
   uploadResume(){
-
+// this is comment
     console.log("before:", this.uploader);
 
     // this.uploader = new FileUploader({
