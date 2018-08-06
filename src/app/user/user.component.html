@@ -1,0 +1,64 @@
+<h1> Authentication Sample </h1>
+<br>
+
+<div *ngIf="theActualUser">
+
+  User: {{theActualUser.email}}
+
+</div>
+<br>
+
+<!-- <button (click)="logMeOut()">Log Out</button> -->
+<br>
+<br>
+
+<div *ngIf="theActualUser">
+<form (ngSubmit)="checkEmail()">
+  
+  <label> Email </label>
+  <input type="text" [(ngModel)]="checkemailUser.email" name="email"/>
+  <br>
+  <button> Check Email </button>
+</form>
+</div>
+
+<div *ngIf="theActualUser">
+<h2>Signup Form</h2>
+
+<form (ngSubmit) = "tryToSignUp()" method="post" enctype="multipart/form-data">
+  
+  <label> Email Address </label>
+  <input type="text" [(ngModel)]="theActualUser.email" name="email"/>
+  <br>
+  
+  <label> Password </label>
+  <input type="password" [(ngModel)]="theActualUser.password" name="password"/>
+  <br>
+
+  <label> Name </label>
+  <input type="text" [(ngModel)]="theActualUser.name" name="name"/>
+  <br>
+
+  <label> Graduation Date </label>
+  <input type="text" [(ngModel)]="theActualUser.gradDate" name="gradDate"/>
+  <br>
+
+  <label> Phone Number </label>
+  <input type="text" [(ngModel)]="theActualUser.phoneNum" name="phoneNum"/>
+  <br>
+
+ 
+  <button> Register Now! </button>
+</form>
+
+</div>
+<hr>
+
+
+<div *ngIf="theError">error:{{theError}}</div>
+
+<br>
+<hr>
+<button (click)="logMeOut()">Log Out</button>
+
+

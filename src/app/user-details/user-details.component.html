@@ -1,0 +1,26 @@
+ 
+ <div *ngIf="theActualUser">
+
+  User: {{theActualUser.email}}
+  Name: {{theActualUser.name}}
+  Position: {{theActualUser.position}}
+  Graduation Date : {{theActualUser.gradDate}}
+  Phone Number: {{theActualUser.phoneNum}}
+
+
+ </div>
+
+
+<form (submit)="uploadResume()">
+
+ <label> Resume </label>
+  <input type="file" name="image" ng2FileSelect [uploader]="uploader" />
+  <br>
+  <button>Submit Resume</button>
+</form>
+
+<!-- <form>
+  <label> Profile Pic </label>
+  <input type="file" name="image" ng2FileSelect [uploader]="uploader" />
+  <br>
+</form> -->
