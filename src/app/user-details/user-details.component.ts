@@ -77,6 +77,13 @@ export class UserDetailsComponent implements OnInit {
  
 
   ngOnInit() {
+    this.authService.isLoggedIn()
+    .toPromise()
+    .then( user => {
+      this.theActualUser = user;
+      console.log('helooooo: ', user)
+    } )
+    .catch( err => console.log('the err: ', err) )
   }
 
 }

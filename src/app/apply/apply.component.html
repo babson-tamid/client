@@ -1,29 +1,36 @@
-<!-- <p>
-  apply works!
-</p>
-
-const newsSchema = new Schema({
-  creator: {type: Schema.Types.ObjectId, ref: 'User'},
-  title: String, 
-  description: String,
-  imgPath: String
-}, {
-  timestamps: true
-});
 
 
-<form (ngSubmit)="tryToApply()">
-  
-  <label> Creator </label>
-  <input type="text" [(ngModel)]="loginUser.email" name="email"/>
+<div *ngIf="theActualUser">
+<h2>Application Form</h2>
+
+<form (ngSubmit) = "applyNow()" method="post" enctype="multipart/form-data">
+
+
+  <label> Email Address </label>
+  <input type="text" [(ngModel)]="theActualUser.email" name="email"/>
   <br>
   
   <label> Password </label>
-  <input type="password" [(ngModel)]="loginUser.password" name="password"/>
+  <input type="password" [(ngModel)]="theActualUser.password" name="password"/>
   <br>
-  
-  <button> Log in </button>
+
+  <label> Name </label>
+  <input type="text" [(ngModel)]="theActualUser.name" name="name"/>
+  <br>
+
+  <label> Graduation Date </label>
+  <input type="text" [(ngModel)]="theActualUser.gradDate" name="gradDate"/>
+  <br>
+
+  <label> Phone Number </label>
+  <input type="text" [(ngModel)]="theActualUser.phoneNum" name="phoneNum"/>
+  <br>
+
+ 
+  <button> Register Now! </button>
 </form>
 
-<div *ngIf="theError">error:{{theError}}</div>
- -->
+</div>
+
+
+
