@@ -14,6 +14,8 @@ import { FileUploadModule } from "ng2-file-upload";
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { NewsServiceService } from './services/newService.service';
+import { UploadImagesComponent } from './upload-images/upload-images.component';
+
 
 
 
@@ -50,6 +52,9 @@ const routes: Routes = [
     ApplyComponent,
     UserDetailsComponent,
     NewsletterComponent,
+    UploadImagesComponent,
+    
+
     
   ],
   imports: [
