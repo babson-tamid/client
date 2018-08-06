@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { ApplyComponent } from './apply/apply.component';
 import { FileUploadModule } from "ng2-file-upload";
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { UploadImagesComponent } from './upload-images/upload-images.component';
 
 
 
@@ -45,6 +46,8 @@ const routes: Routes = [
     LoginComponent,
     ApplyComponent,
     UserDetailsComponent,
+    UploadImagesComponent,
+    
     
   ],
   imports: [

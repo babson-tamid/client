@@ -1,12 +1,14 @@
  
- <div *ngIf="theActualUser">
+ <div *ngIf= 'theActualUser' >
 
-  User: {{theActualUser.email}}
-  Name: {{theActualUser.name}}
-  Position: {{theActualUser.position}}
-  Graduation Date : {{theActualUser.gradDate}}
-  Phone Number: {{theActualUser.phoneNum}}
-
+  <p>User: {{theActualUser.email}}</p>
+  <p>Name: {{theActualUser.name}}</p>
+  <p>Position: {{theActualUser.position}}</p>
+  <p>Graduation Date : {{theActualUser.gradDate}}</p>
+  <p>Phone Number: {{theActualUser.phoneNum}}</p>
+  <!-- <img src="" alt="resume">
+  <img src="" alt="profilePic"> -->
+  
 
  </div>
 
@@ -18,9 +20,10 @@
   <br>
   <button>Submit Resume</button>
 </form>
+<br>
 
-<!-- <form>
-  <label> Profile Pic </label>
-  <input type="file" name="image" ng2FileSelect [uploader]="uploader" />
-  <br>
-</form> -->
+
+
+<app-upload-images></app-upload-images>
+
+

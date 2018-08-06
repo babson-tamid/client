@@ -4,7 +4,8 @@ import {FormsModule} from '@angular/forms';
 import { Router } from '@angular/router';
 import { FileUploader } from "ng2-file-upload";
 import { isNgTemplate } from '../../../node_modules/@angular/compiler';
-import {UserComponent} from '../user/user.component';
+
+
 
 @Component({
   selector: 'app-user-details',
@@ -13,6 +14,8 @@ import {UserComponent} from '../user/user.component';
 })
 export class UserDetailsComponent implements OnInit {
 
+  loginUser: any = {}
+  
   theActualUser:any = {
     email:'',
     password: '',
@@ -29,6 +32,12 @@ export class UserDetailsComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
   
+  showDescription(){
+    this.authService.login(this.loginUser)
+    .subscribe((res)=>{
+      this.theActualUser = res
+    })
+  }
 
   uploadResume(){
 // this is comment
@@ -61,30 +70,11 @@ export class UserDetailsComponent implements OnInit {
 
     this.uploader.uploadAll();
 
+    
 
   }
 
-  // uploadProfilePic(){
-
-  //   this.uploader = new FileUploader({
-  //     url: `http://localhost:3000/api/profilePic`,
-  //     itemAlias: "images"
-  //   });
-
-  //   this.uploader.onBuildItemForm = (item, form) => {
-    
-  //     this.uploader.uploadAll();
-
-  //   }
-
-
-  //   this.uploader.onSuccessItem =(item, form)=>{
-  //     this.router.navigate(['/'])
-  //   }
-
-  //   this.uploader.uploadAll();
-
-  // }
+ 
 
   ngOnInit() {
   }
