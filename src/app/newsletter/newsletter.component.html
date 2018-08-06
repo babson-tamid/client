@@ -1,0 +1,33 @@
+
+<!-- only for admins  -->
+<div>
+<h2>Create Newsletter Post</h2>
+
+<form (ngSubmit)="createPost()" method="post" enctype="multipart/form-data">
+  
+  <label> Creator </label>
+  <input type="text" [(ngModel)]="Newsletter.creator" name="yo"/>
+  <br>
+
+  <label> Title </label>
+  <input type="text" [(ngModel)]="Newsletter.title" name="yo"/>
+  <br>
+  
+  <label> Description </label>
+  <input type="text" [(ngModel)]="Newsletter.description" name="yo"/>
+  <br>
+
+  <!-- <label> Related Image </label>  
+  <input type="file" name="image" ng2FileSelect [uploader]="uploader" />
+  <br> -->
+  
+  <button> Post It!</button>
+</form>
+</div>
+
+<!-- list Newsletter -->
+
+
+
+
+

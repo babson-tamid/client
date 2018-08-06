@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { ApplyComponent } from './apply/apply.component';
 import { FileUploadModule } from "ng2-file-upload";
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { NewsServiceService } from './services/newService.service';
 
 
 
@@ -31,12 +33,14 @@ const routes: Routes = [
   {
     path:'apply',
     component: ApplyComponent
+  },
+  {
+    path:'newsletter',
+    component: NewsletterComponent
+
   }
   
-
-
 ]
-
 
 @NgModule({
   declarations: [
@@ -45,6 +49,7 @@ const routes: Routes = [
     LoginComponent,
     ApplyComponent,
     UserDetailsComponent,
+    NewsletterComponent,
     
   ],
   imports: [
@@ -54,7 +59,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FileUploadModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, NewsServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
