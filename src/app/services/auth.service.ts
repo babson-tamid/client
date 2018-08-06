@@ -56,17 +56,17 @@ export class AuthService {
   isLoggedIn() {
     console.log("checking if logged in from auth service")
     return this.http.get(`http://localhost:3000/api/loggedin`, {withCredentials: true})
-      // .map((res) => {
-      //   console.log("response when checking log in", res)
-      //   return JSON.parse(res._body)
-      // })
-      .toPromise()
-      .then((resultFromAPI) => {
-        console.log(" results after checking if logged in ========= ", resultFromAPI._body)
-        this.currentUser = resultFromAPI._body;
-        return resultFromAPI;
+      .map((res) => {
+        console.log("response when checking log in", res)
+        return JSON.parse(res._body)
       })
-      .catch(this.handleError);
+      // .toPromise()
+      // .then((resultFromAPI) => {
+      //   console.log(" results after checking if logged in ========= ", resultFromAPI._body)
+      //   this.currentUser = JSON.parse(resultFromAPI._body);
+      //   return resultFromAPI;
+      // })
+      // .catch(this.handleError);
   }
 
 

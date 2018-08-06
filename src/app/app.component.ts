@@ -14,10 +14,11 @@ export class AppComponent {
   ) {}
   
   ngOnInit() {
-    this.userInfo.isLoggedIn()
-    .catch((err) => {
-      alert("Something Went Wrong!");
-    });
+    // this.userInfo.isLoggedIn()
+    // .then()
+    // .catch((err) => {
+    //   alert("Something Went Wrong!");
+    // });
   }
 
 

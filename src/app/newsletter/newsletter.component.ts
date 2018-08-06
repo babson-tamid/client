@@ -23,7 +23,7 @@ imgPath:''
   constructor(
     private newsService: NewsServiceService, 
     private router:Router,
-    public userInfo: AuthService
+    public myAuthService: AuthService
   ) { }
   
 
@@ -59,6 +59,12 @@ imgPath:''
 
 
   ngOnInit() {
+    this.myAuthService.isLoggedIn()
+    .toPromise()
+    .then((user) => {
+      console.log('the user: ', user)
+    } )
+    .catch( err => console.log('err is: ', err))
   }
 
 }
