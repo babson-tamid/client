@@ -20,12 +20,29 @@ description:'',
 imgPath:''
 }
 
+
+uploader: FileUploader = new FileUploader({
+  url: 'http://localhost:3000/api/newsletter',
+  itemAlias: "image"
+});
+
   constructor(
     private newsService: NewsServiceService, 
     private router:Router,
     public myAuthService: AuthService
   ) { }
   
+  displayPosts(){
+    this.newsService.newsletterList()
+    .subscribe(
+      newsObjFromApi => {
+        this.Newsletter = newsObjFromApi;
+        this.router.navigate(['/newsletter'])
+      }
+    )
+  }
+
+
 
   createPost(){
     this.newsService.createNews()
@@ -56,6 +73,44 @@ imgPath:''
       }
     )
   }
+  
+  
+  uploadNewsLetter(){
+    // this is comment
+        console.log("before:", this.uploader);
+    
+        // this.uploader = new FileUploader({
+        //   url: 'http://localhost:3000/api/resume',
+        //   itemAlias: "image"
+        // });
+    
+    
+        console.log('after: ',this.uploader)
+    
+    
+    
+        this.uploader.onBuildItemForm = (item, form) => {
+          console.log('building it breh')
+        }
+    
+    
+        this.uploader.onSuccessItem =(item, form)=>{
+          console.log('SUCCESS')
+          this.router.navigate(['/'])
+          
+        }
+    
+        this.uploader.onErrorItem = (item, res)=>{
+          console.log("ERRRROR")
+        }
+    
+        this.uploader.uploadAll();
+    
+    
+      }
+
+
+
 
 
   ngOnInit() {
