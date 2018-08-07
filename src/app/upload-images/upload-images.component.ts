@@ -23,7 +23,7 @@ export class UploadImagesComponent implements OnInit {
   }
 
   uploader: FileUploader = new FileUploader({
-    url: 'http://localhost:3000/api/profilePic',
+    url: 'http://localhost:3000/api/profilePic/',
     itemAlias: "image"
   });
 
@@ -31,6 +31,7 @@ export class UploadImagesComponent implements OnInit {
 
 
   uploadProfilePic(){
+    
     // this is comment
         console.log("before:", this.uploader);
     

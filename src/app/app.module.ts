@@ -15,6 +15,9 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { NewsServiceService } from './services/newService.service';
 import { UploadImagesComponent } from './upload-images/upload-images.component';
+import { NewsletterEditComponent } from './newsletter-edit/newsletter-edit.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 
@@ -40,6 +43,20 @@ const routes: Routes = [
     path:'newsletter',
     component: NewsletterComponent
 
+  },
+  {
+    path:'edit/:id',
+    component: NewsletterEditComponent
+
+  },
+  {
+    path:'events',
+    component: CalendarComponent
+
+  },
+  {
+    path:'aboutpage',
+    component: AboutUsComponent
   }
   
 ]
@@ -53,9 +70,9 @@ const routes: Routes = [
     UserDetailsComponent,
     NewsletterComponent,
     UploadImagesComponent,
-    
-
-    
+    NewsletterEditComponent,
+    CalendarComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,

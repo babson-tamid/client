@@ -1,0 +1,28 @@
+
+
+<h3>What is Tamid?</h3>
+
+  <p>The TAMID Group is a student-led, non-profit organization, 
+    which creates relationships between business-minded students 
+    and the Israeli economy/start up nation. Founded in 2008, nearly thirty 
+    elite U.S. universities have TAMID on their campuses. TAMID gives 
+    students hands on experience with the Israeli start up nation and economy.</p>
+
+
+
+
+    <div *ngFor="let oneUser of allUsers">
+
+      <div *
+      ngIf="oneUser.role === 'admin'">
+
+        
+        <img src="{{oneUser.profilePic}}" alt="profilePic">
+        <h3>{{oneUser.name}}</h3>
+        <p>{{oneUser.position}}</p>
+        <hr>
+
+      </div>
+      
+      </div>
+

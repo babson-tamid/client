@@ -20,7 +20,8 @@ export class UserComponent implements OnInit {
     password: '',
     name:'',
     gradDate:'',
-    phoneNum:''
+    phoneNum:'',
+    linkedInUrl:''
     
   }
   

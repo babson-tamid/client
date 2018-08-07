@@ -17,11 +17,13 @@ export class ApplyComponent implements OnInit {
     password: '',
     name:'',
     gradDate:'',
-    phoneNum:''
+    phoneNum:'',
+    linkedInUrl:''
     
   }
 
   theError:any;
+
 
 
   constructor(private authService: AuthService, private router:Router) { }
@@ -36,7 +38,39 @@ export class ApplyComponent implements OnInit {
       error=>{this.theError = error}
     
     ;
+
+
   }
+
+  // this.uploader.onBuildItemForm = (item, form) => {
+  //   form.append('creator', this.newsletter.creator);
+  //   form.append('title', this.newsletter.title);
+  //   form.append('description', this.newsletter.description);
+  // }
+
+
+  // this.uploader.onSuccessItem =(item, form)=>{
+  //   this.newsletter = {
+  //     creator: '',
+  //     title:'',
+  //     description:''
+  //   }
+    
+
+  
+  //   this.uploader.onErrorItem = (item, res)=>{
+  //     console.log("ERRRROR")
+  //   }
+
+  //   this.uploader.uploadAll();
+  //   // this.newsService.createNews()
+  //   // .subscribe(
+  //   //   newsObjFromApi => {
+  //   //     this.Newsletter = newsObjFromApi;
+  //   //     this.router.navigate(['/newsletter'])
+  //   //   }
+  //   // )
+  // }
 
   ngOnInit() {
   }
