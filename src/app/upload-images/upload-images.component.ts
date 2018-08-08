@@ -52,8 +52,9 @@ export class UploadImagesComponent implements OnInit {
     
         this.uploader.onSuccessItem =(item, form)=>{
           console.log('SUCCESS')
-          this.router.navigate(['/'])
-          
+          // this.router.navigate(['/'])
+          // window.location.reload();
+
         }
     
         this.uploader.onErrorItem = (item, res)=>{
@@ -61,9 +62,17 @@ export class UploadImagesComponent implements OnInit {
         }
     
         this.uploader.uploadAll();
-    
+        // window.location.reload();
     
       }
+
+      reloadPage(){
+        
+        location.reload();
+
+      }
+
+      
 
 
   ngOnInit() {

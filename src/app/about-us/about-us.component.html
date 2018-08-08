@@ -9,20 +9,39 @@
     students hands on experience with the Israeli start up nation and economy.</p>
 
 
+    <div class="members" *ngFor="let oneUser of allUsers">
+    
+      <div *ngIf="oneUser.role === 'admin'">
+        
+        <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar">
+        <!-- <img src="{{oneUser.profilePic}}" alt="profilePic"> -->
+        <br>
+        <br>
+        <h3>{{oneUser.name}}</h3>
+        <p>{{oneUser.position}}</p>
+        
 
+      </div>
+
+      <br>
+
+
+    </div> 
 
     <div *ngFor="let oneUser of allUsers">
 
-      <div *
-      ngIf="oneUser.role === 'admin'">
+      <div *ngIf="oneUser.role === 'member'">
 
-        
-        <img src="{{oneUser.profilePic}}" alt="profilePic">
+        <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar">
+        <!-- <img src="{{oneUser.profilePic}}" alt="profilePic"> -->
+        <br>
+        <br>
         <h3>{{oneUser.name}}</h3>
         <p>{{oneUser.position}}</p>
-        <hr>
+        
 
       </div>
-      
-      </div>
+
+    </div> 
+
 

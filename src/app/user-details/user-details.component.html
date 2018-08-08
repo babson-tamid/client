@@ -14,8 +14,9 @@
   
 
  </div>
-
-
+<div *ngIf="theActualUser.profilePic.length === 0">
+ <app-upload-images></app-upload-images>
+</div>
 <!-- <form (submit)="uploadResume()">
 
  <label> Resume </label>

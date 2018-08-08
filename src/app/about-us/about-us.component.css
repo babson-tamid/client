@@ -1,0 +1,23 @@
+img{
+    height: 200px;
+    width: 15vw;
+    border-radius: 50%;
+}
+
+.members{
+    display: inline-block;
+    /* justify-content:space-around; */
+    /* flex-direction: row; */
+    border: 1px grey solid;
+    /* width: 310px; */
+    /* height:335px; */
+    text-align: center;
+    /* padding-top: 30px; */
+    
+    
+
+
+}
+
+
+

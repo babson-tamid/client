@@ -41,7 +41,7 @@ export class UserComponent implements OnInit {
     console.log("this.checkemailUser: ", this.checkemailUser);    
     this.authService.checkemail(this.checkemailUser)
     .subscribe(userObjFromApi => { 
-        this.theActualUser = userObjFromApi;  
+        this.theActualUser = userObjFromApi;
       //  this.uploader = new FileUploader({
       //     url: `http://localhost:3000/api/user/${this.theActualUser._id}/finish-signup`,
       //     itemAlias: "images"
