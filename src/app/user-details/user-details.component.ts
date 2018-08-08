@@ -21,7 +21,8 @@ export class UserDetailsComponent implements OnInit {
     password: '',
     name:'',
     gradDate:'',
-    phoneNum:''
+    phoneNum:'',
+    linkedInUrl:''
     
   }
 
@@ -39,40 +40,34 @@ export class UserDetailsComponent implements OnInit {
     })
   }
 
-  uploadResume(){
-// this is comment
-    console.log("before:", this.uploader);
+//   uploadResume(){
+// // this is comment
+//     console.log("before:", this.uploader);
 
-    // this.uploader = new FileUploader({
-    //   url: 'http://localhost:3000/api/resume',
-    //   itemAlias: "image"
-    // });
-
-
-    console.log('after: ',this.uploader)
+//     console.log('after: ',this.uploader)
 
 
 
-    this.uploader.onBuildItemForm = (item, form) => {
-      console.log('building it breh')
-    }
+//     this.uploader.onBuildItemForm = (item, form) => {
+//       console.log('building it breh')
+//     }
 
 
-    this.uploader.onSuccessItem =(item, form)=>{
-      console.log('SUCCESS')
-      this.router.navigate(['/'])
+//     this.uploader.onSuccessItem =(item, form)=>{
+//       console.log('SUCCESS')
+//       this.router.navigate(['/'])
       
-    }
+//     }
 
-    this.uploader.onErrorItem = (item, res)=>{
-      console.log("ERRRROR")
-    }
+//     this.uploader.onErrorItem = (item, res)=>{
+//       console.log("ERRRROR")
+//     }
 
-    this.uploader.uploadAll();
+//     this.uploader.uploadAll();
 
     
 
-  }
+//   }
 
  
 

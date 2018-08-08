@@ -7,11 +7,60 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+  <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-ho/mKh8hy3p/ZGI/S2rblqWSTvRs/uBnjJQFUAZ25P5EnuctI+mknhzRAMHQpsRm" crossorigin="anonymous"> -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-58Vxhfld+b/l9kgnC3BTqFfoqWobrpZKMIaWTgND+yN43GDm0zBTE+j3BpPQAuTb" crossorigin="anonymous">
+  <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+  <!-- <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script> -->
+
 </head>
 <body>
+  
+  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Babson TAMID</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/aboutpage">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/newsletter">Newsletter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="/events">Events</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/apply">Apply</a>
+          </li>
+          <div *ngIf="theActualUser ===">
+          <li class="nav-item">
+              <a class="nav-link" href="/userDetails">User Information</a>
+          </li>
+        </div>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          
+        </ul>
+
+        <!-- <button (click)=logout()>Log Out</button> -->
+      </div>
+    </nav>
+
+    
+
   <app-root></app-root>
 </body>
 </html>

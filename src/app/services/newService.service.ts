@@ -25,28 +25,29 @@ export class NewsServiceService {
   }
 
   createNews(){
-    return this.http.get(`http://localhost:3000/api/newsletter/create`)
+    return this.http.get(`http://localhost:3000/api/newsletter/create`, { withCredentials: true })
     .map((res)=> res.json())
     .catch(this.handleError);
     
   }
 
-  getNews(){
-    return this.http.get(`http://localhost:3000/api/newsletter/:id`)
+  getNews(id){
+    return this.http.get(`http://localhost:3000/api/newsletter/${id}`, { withCredentials: true })
     .map((res)=> res.json())
     .catch(this.handleError);
     
   }
 
-  updateNews(){
-    return this.http.get(`http://localhost:3000/api/newsletter/:id/update`)
+  updateNews(id, data){
+    console.log('in the news service data is: ', data, id)
+    return this.http.post(`http://localhost:3000/api/newsletter/${id}/update`, data, { withCredentials: true })
     .map((res)=> res.json())
-    .catch(this.handleError);
+    // .catch(this.handleError);
     
   }
 
   deleteNews(){
-    return this.http.get(`http://localhost:3000/api/newsletter/:id/delete`)
+    return this.http.get(`http://localhost:3000/api/newsletter/:id/delete`, { withCredentials: true })
     .map((res)=> res.json())
     .catch(this.handleError);
 

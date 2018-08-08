@@ -69,6 +69,13 @@ export class AuthService {
       // .catch(this.handleError);
   }
 
+  aboutUs(){
+    return this.http.get(`http://localhost:3000/api/aboutpage`)
+    .map(res => res.json())
+    .catch(this.handleError);
+  }
+
+
 
   getPrivateData() {
     return this.http.get(`/private`)

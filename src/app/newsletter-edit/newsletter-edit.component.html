@@ -1,0 +1,25 @@
+<form (ngSubmit)="updatePost(newsletter._id, myForm)" #myForm="ngForm" enctype="multipart/form-data">
+  
+  <label> Creator </label>
+  <input type="text" [(ngModel)]="newsletter.creator" name="creator" value="{{newsletter.creator}}" />
+  <br>
+
+  <label> Title </label>
+  <input type="text" [(ngModel)]="newsletter.title" name="title" value="{{newsletter.title}}"/>
+  <br>
+  
+  <label> Description </label>
+  <input type="text" [(ngModel)]="newsletter.description" name="description" value="{{newsletter.description}}" />
+  <br>
+
+   <!-- <form (submit)="uploadNewsletter()"> -->
+  <!-- <label> Related Image </label>
+  <input type="file" name="image" ng2FileSelect [uploader]="uploader" />
+  <br> -->
+  <!-- <button>Submit</button> -->
+   <!-- </form> -->
+  
+  <button> Update Post</button>
+</form>
+
+ 

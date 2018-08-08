@@ -1,31 +1,27 @@
 
 <!-- only for admins  -->
-<div *ngIf let role of >
+<div *ngIf="role === 'admin'" >
 <h2>Create Newsletter Post</h2>
 
 <form (ngSubmit)="createPost()" method="post" enctype="multipart/form-data">
   
   <label> Creator </label>
-  <input type="text" [(ngModel)]="Newsletter.creator" name="yo"/>
+  <input type="text" [(ngModel)]="newsletter.creator" name="yo"/>
   <br>
 
   <label> Title </label>
-  <input type="text" [(ngModel)]="Newsletter.title" name="yo"/>
+  <input type="text" [(ngModel)]="newsletter.title" name="yo"/>
   <br>
   
   <label> Description </label>
-  <input type="text" [(ngModel)]="Newsletter.description" name="yo"/>
+  <input type="text" [(ngModel)]="newsletter.description" name="yo"/>
   <br>
 
-  
-
-  <form (submit)="uploadNewsletter()">
-
-    <label> Related Image </label>
-     <input type="file" name="image" ng2FileSelect [uploader]="uploader" />
-     <br>
-     <button>Submit</button>
-   </form>
+  <label> Related Image </label>
+  <input type="file" name="image" ng2FileSelect [uploader]="uploader" />
+  <br>
+  <!-- <button>Submit</button> -->
+   <!-- </form> -->
   
   <button> Post It!</button>
 </form>
@@ -33,8 +29,8 @@
 
 <!-- list Newsletter -->
 
-<div>
-
+<div *ngFor="let oneNews of newsletter">
+    {{ oneNews.title}} by {{ oneNews.creator }}  <p *ngIf="role === 'admin'"> <a [routerLink]="['/edit', oneNews._id]">Edit</a></p>
 
 
 

@@ -13,16 +13,18 @@ import { AuthService } from '../services/auth.service';
 })
 export class NewsletterComponent implements OnInit {
 
-Newsletter:any ={
-creator: '',
-title:'',
-description:'',
-imgPath:''
+newsletter:any ={
+  creator: '',
+  title:'',
+  description:'',
+  imgPath: ''
 }
+
+role: String;
 
 
 uploader: FileUploader = new FileUploader({
-  url: 'http://localhost:3000/api/newsletter',
+  url: 'http://localhost:3000/api/newsletter/create',
   itemAlias: "image"
 });
 
@@ -35,8 +37,9 @@ uploader: FileUploader = new FileUploader({
   displayPosts(){
     this.newsService.newsletterList()
     .subscribe(
-      newsObjFromApi => {
-        this.Newsletter = newsObjFromApi;
+      newsObjectsFromApi => {
+        console.log('blah: ', newsObjectsFromApi)
+        this.newsletter = newsObjectsFromApi;
         this.router.navigate(['/newsletter'])
       }
     )
@@ -45,81 +48,58 @@ uploader: FileUploader = new FileUploader({
 
 
   createPost(){
-    this.newsService.createNews()
-    .subscribe(
-      newsObjFromApi => {
-        this.Newsletter = newsObjFromApi;
-        this.router.navigate(['/newsletter'])
+    this.uploader.onBuildItemForm = (item, form) => {
+      form.append('creator', this.newsletter.creator);
+      form.append('title', this.newsletter.title);
+      form.append('description', this.newsletter.description);
+    }
+
+
+    this.uploader.onSuccessItem =(item, form)=>{
+      this.newsletter = {
+        creator: '',
+        title:'',
+        description:''
       }
-    )
+      this.router.navigate(['/newsletter']);
+    }
+
+    this.uploader.onErrorItem = (item, res)=>{
+      console.log("ERRRROR")
+    }
+
+    this.uploader.uploadAll();
+    // this.newsService.createNews()
+    // .subscribe(
+    //   newsObjFromApi => {
+    //     this.Newsletter = newsObjFromApi;
+    //     this.router.navigate(['/newsletter'])
+    //   }
+    // )
   }
 
-  updatePost(){
-    this.newsService.updateNews()
-    .subscribe(
-      newsObjFromApi => {
-        this.Newsletter = newsObjFromApi;
-        this.router.navigate(['/newsletter'])
-      }
-    )
-  }
 
   deletePost(){
     this.newsService.deleteNews()
     .subscribe(
       newsObjFromApi => {
-        this.Newsletter = newsObjFromApi;
+        this.newsletter = newsObjFromApi;
         this.router.navigate(['/newsletter'])
       }
     )
   }
   
-  
-  uploadNewsLetter(){
-    // this is comment
-        console.log("before:", this.uploader);
-    
-        // this.uploader = new FileUploader({
-        //   url: 'http://localhost:3000/api/resume',
-        //   itemAlias: "image"
-        // });
-    
-    
-        console.log('after: ',this.uploader)
-    
-    
-    
-        this.uploader.onBuildItemForm = (item, form) => {
-          console.log('building it breh')
-        }
-    
-    
-        this.uploader.onSuccessItem =(item, form)=>{
-          console.log('SUCCESS')
-          this.router.navigate(['/'])
-          
-        }
-    
-        this.uploader.onErrorItem = (item, res)=>{
-          console.log("ERRRROR")
-        }
-    
-        this.uploader.uploadAll();
-    
-    
-      }
-
-
-
-
-
   ngOnInit() {
     this.myAuthService.isLoggedIn()
     .toPromise()
     .then((user) => {
-      console.log('the user: ', user)
+      this.role = user.role;
+      
+      console.log('what: ', this.role)
     } )
     .catch( err => console.log('err is: ', err))
+
+    this.displayPosts();
   }
 
 }
