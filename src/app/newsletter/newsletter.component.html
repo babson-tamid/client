@@ -30,8 +30,16 @@
 <!-- list Newsletter -->
 
 <div *ngFor="let oneNews of newsletter">
-    {{ oneNews.title}} by {{ oneNews.creator }}  <p *ngIf="role === 'admin'"> <a [routerLink]="['/edit', oneNews._id]">Edit</a></p>
+    
+  {{ oneNews.title}} by {{ oneNews.creator }}  <p *ngIf="role === 'admin'"> <a [routerLink]="['/edit', oneNews._id]">Edit</a></p>
+  <img src={{oneNews.imgPath}}>
+  <br>
+  <br>
 
+  <div *ngIf="role === 'admin'">
+    <button (ngClick)=deletePost()>Delete Post</button>
+
+  </div>
 
 
 

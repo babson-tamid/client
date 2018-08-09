@@ -9,8 +9,11 @@
   <p>LinkedIn URL: {{theActualUser.linkedInUrl}}</p>
 
   
-  <img [src]="theActualUser.profilePic" alt="profilePic">
+<div class="profileImg" *ngIf="theActualUser.profilePic.length > 0">
   
+  <img [src]="theActualUser.profilePic" alt="profilePic">
+  <button>Remove Picture</button>
+</div>
   
 
  </div>

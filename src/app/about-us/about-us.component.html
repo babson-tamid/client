@@ -1,4 +1,4 @@
-
+<div id='about-us-page'>
 
 <h3>What is Tamid?</h3>
 
@@ -7,41 +7,50 @@
     and the Israeli economy/start up nation. Founded in 2008, nearly thirty 
     elite U.S. universities have TAMID on their campuses. TAMID gives 
     students hands on experience with the Israeli start up nation and economy.</p>
+    <br>
+    <br>
+    <h2>Exectutive Officers</h2>
+    <br>
+    <div class="about-us-users-wrapper" >
+      <div *ngFor="let oneUser of admins">
+        <div class="about-us-user">
+          
+          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar">
+          <!-- <img src="{{oneUser.profilePic}}" alt="profilePic"> -->
+          <br>
+          <br>
+          <h3>{{oneUser.name}}</h3>
+          <p>{{oneUser.position}}</p>
+          
 
+        </div>
 
-    <div class="members" *ngFor="let oneUser of allUsers">
-    
-      <div *ngIf="oneUser.role === 'admin'">
-        
-        <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar">
-        <!-- <img src="{{oneUser.profilePic}}" alt="profilePic"> -->
         <br>
+
+
+      </div> 
+    </div>
+
+    <h2>Members</h2>
+    <br>
+    <div class="about-us-users-wrapper" >
+      <div *ngFor="let oneUser of members">
+        <div class="about-us-user">
+          
+          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar">
+          <!-- <img src="{{oneUser.profilePic}}" alt="profilePic"> -->
+          <br>
+          <br>
+          <h3>{{oneUser.name}}</h3>
+          <p>{{oneUser.position}}</p>
+          
+
+        </div>
+
         <br>
-        <h3>{{oneUser.name}}</h3>
-        <p>{{oneUser.position}}</p>
-        
-
-      </div>
-
-      <br>
 
 
-    </div> 
+      </div> 
+    </div>
 
-    <div *ngFor="let oneUser of allUsers">
-
-      <div *ngIf="oneUser.role === 'member'">
-
-        <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar">
-        <!-- <img src="{{oneUser.profilePic}}" alt="profilePic"> -->
-        <br>
-        <br>
-        <h3>{{oneUser.name}}</h3>
-        <p>{{oneUser.position}}</p>
-        
-
-      </div>
-
-    </div> 
-
-
+</div>

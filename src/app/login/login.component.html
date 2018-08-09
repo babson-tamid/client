@@ -1,10 +1,10 @@
-<div *ngIf="theActualUser">
+<!-- <div *ngIf="theActualUser">
 
   User: {{theActualUser.email}}
 
-</div>
+</div> -->
 
-<h2>Login Form</h2>
+<!-- <h2>Login Form</h2>
 
 <form (ngSubmit)="tryToLogIn()">
   
@@ -17,11 +17,39 @@
   <br>
   
   <button> Log in </button>
-</form>
+</form> -->
 
-<div *ngIf="theError">error:{{theError}}</div>
-
-
+<!-- <div *ngIf="theError">error:{{theError}}</div> -->
 
 
+
+<div class="container">
+    <h1 class="form-heading">Login Form</h1>
+    <div class="login-form">
+    <div class="main-div">
+        <div class="panel">
+       <h2>Login</h2>
+       <p>Please enter your email and password</p>
+       </div>
+        <form id="Login" (ngSubmit)="tryToLogIn()">
+    
+            <div class="form-group">
+    
+                <!-- <label> Email Address </label> -->
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" [(ngModel)]="loginUser.email" name="email">
+    
+            </div>
+    
+            <div class="form-group">
+                <!-- <label> Password </label> -->
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" [(ngModel)]="loginUser.password" name="password">
+    
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Login</button>
+    
+        </form>
+        </div>
+    <!-- <p class="botto-text"> Designed by Sunil Rajput</p> -->
+    </div></div>
 

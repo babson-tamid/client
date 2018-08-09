@@ -18,6 +18,7 @@ import { UploadImagesComponent } from './upload-images/upload-images.component';
 import { NewsletterEditComponent } from './newsletter-edit/newsletter-edit.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -42,6 +43,11 @@ const routes: Routes = [
   {
     path:'newsletter',
     component: NewsletterComponent
+
+  },
+  {
+    path:'navbar',
+    component: NavbarComponent
 
   },
   {
@@ -73,6 +79,7 @@ const routes: Routes = [
     NewsletterEditComponent,
     CalendarComponent,
     AboutUsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
