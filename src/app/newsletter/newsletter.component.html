@@ -1,51 +1,53 @@
+<div id="whole-page">
 
-<!-- only for admins  -->
-<div *ngIf="role === 'admin'" >
-<h2>Create Newsletter Post</h2>
-
-<form (ngSubmit)="createPost()" method="post" enctype="multipart/form-data">
-  
-  <label> Creator </label>
-  <input type="text" [(ngModel)]="newsletter.creator" name="yo"/>
-  <br>
-
-  <label> Title </label>
-  <input type="text" [(ngModel)]="newsletter.title" name="yo"/>
-  <br>
-  
-  <label> Description </label>
-  <input type="text" [(ngModel)]="newsletter.description" name="yo"/>
-  <br>
-
-  <label> Related Image </label>
-  <input type="file" name="image" ng2FileSelect [uploader]="uploader" />
-  <br>
-  <!-- <button>Submit</button> -->
-   <!-- </form> -->
-  
-  <button> Post It!</button>
-</form>
-</div>
-
-<!-- list Newsletter -->
-
-<div *ngFor="let oneNews of newsletter">
+  <!-- only for admins  -->
+  <div *ngIf="role === 'admin'" >
+    <h2>Create Newsletter Post</h2>
     
-  {{ oneNews.title}} by {{ oneNews.creator }}  <p *ngIf="role === 'admin'"> <a [routerLink]="['/edit', oneNews._id]">Edit</a></p>
-  <img src={{oneNews.imgPath}}>
-  <br>
-  <br>
-
-  <div *ngIf="role === 'admin'">
-    <button (ngClick)=deletePost()>Delete Post</button>
-
+    <form (ngSubmit)="createPost()" method="post" enctype="multipart/form-data">
+      
+      <label> Creator </label>
+      <input type="text" [(ngModel)]="newsletter.creator" name="yo"/>
+      <br>
+      
+      <label> Title </label>
+      <input type="text" [(ngModel)]="newsletter.title" name="yo"/>
+      <br>
+      
+      <label> Description </label>
+      <input type="text" [(ngModel)]="newsletter.description" name="yo"/>
+      <br>
+      
+      <label> Related Image </label>
+      <input type="file" name="image" ng2FileSelect [uploader]="uploader" />
+      <br>
+      <!-- <button>Submit</button> -->
+      <!-- </form> -->
+      
+      <button> Post It!</button>
+    </form>
   </div>
-
-
-
-
+  
+  <!-- list Newsletter -->
+  
+  <div *ngFor="let oneNews of newsletter">
+    
+    {{ oneNews.title}} by {{ oneNews.creator }}  <p *ngIf="role === 'admin'"> <a [routerLink]="['/edit', oneNews._id]">Edit</a></p>
+    <img src={{oneNews.imgPath}}>
+    <br>
+    <br>
+    
+    <div *ngIf="role === 'admin'">
+      <button (click)=deletePost(oneNews._id)>Delete Post</button>
+      
+    </div>
+    
+    
+    
+    
+  </div>
+  
 </div>
-
 
 
 

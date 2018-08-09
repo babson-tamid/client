@@ -1,0 +1,12 @@
+nav {
+    background-color: #0A6545 !important;
+}
+
+.navbar-brand{
+    padding-left: 10px;
+}
+
+img {
+    max-width: 30px;
+    max-height: 30px;
+}

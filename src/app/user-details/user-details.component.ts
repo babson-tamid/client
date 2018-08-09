@@ -22,12 +22,13 @@ export class UserDetailsComponent implements OnInit {
     name:'',
     gradDate:'',
     phoneNum:'',
-    linkedInUrl:''
+    linkedInUrl:'',
+    _id: ''
     
   }
 
   uploader: FileUploader = new FileUploader({
-    url: 'http://localhost:3000/api/resume',
+    url: 'http://localhost:3000/api/profilePic',
     itemAlias: "image"
   });
 
@@ -68,6 +69,15 @@ export class UserDetailsComponent implements OnInit {
     
 
 //   }
+
+removePic(id){
+  console.log("this is the users id ::::::::::::::::::::: ", id)
+  this.authService.deleteUserImage(id)
+  .subscribe((res) => {
+    this.theActualUser = res;
+    location.reload();
+  })
+}
 
  
 

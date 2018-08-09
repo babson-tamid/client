@@ -46,8 +46,8 @@ export class NewsServiceService {
     
   }
 
-  deleteNews(){
-    return this.http.get(`http://localhost:3000/api/newsletter/:id/delete`, { withCredentials: true })
+  deleteNews(id){
+    return this.http.post(`http://localhost:3000/api/newsletter/${id}/delete`, { withCredentials: true })
     .map((res)=> res.json())
     .catch(this.handleError);
 

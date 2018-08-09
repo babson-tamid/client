@@ -53,6 +53,13 @@ export class AuthService {
       .catch(this.handleError);
   }
 
+  deleteUserImage(id) {
+    console.log("user id from service when deleting image ******************* ", id)
+    return this.http.post(`http://localhost:3000/api/deleteProfilePic/${id}`, {withCredentials: true} )
+    .map(res => res.json())
+    .catch(this.handleError);
+  }
+
   isLoggedIn() {
     console.log("checking if logged in from auth service")
     return this.http.get(`http://localhost:3000/api/loggedin`, {withCredentials: true})

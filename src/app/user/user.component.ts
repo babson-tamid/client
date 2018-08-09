@@ -74,7 +74,8 @@ export class UserComponent implements OnInit {
     .subscribe(
       userObjFromApi =>{ 
         this.theActualUser = userObjFromApi;
-        this.router.navigate(['/login'])
+        // this.router.navigate(['/login'])
+        location.reload();
       });
       error=>{this.theError = error}
     

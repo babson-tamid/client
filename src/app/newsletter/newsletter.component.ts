@@ -17,7 +17,8 @@ newsletter:any ={
   creator: '',
   title:'',
   description:'',
-  imgPath: ''
+  imgPath: '',
+  _id: ''
 }
 
 role: String;
@@ -59,7 +60,8 @@ uploader: FileUploader = new FileUploader({
       this.newsletter = {
         creator: '',
         title:'',
-        description:''
+        description:'',
+        imgPath: ''
       }
       this.router.navigate(['/newsletter']);
     }
@@ -76,15 +78,18 @@ uploader: FileUploader = new FileUploader({
     //     this.router.navigate(['/newsletter'])
     //   }
     // )
+    location.reload();
   }
 
 
-  deletePost(){
-    this.newsService.deleteNews()
+  deletePost(id){
+    console.log('newsletter info ============ ', id)
+    this.newsService.deleteNews(id)
     .subscribe(
       newsObjFromApi => {
         this.newsletter = newsObjFromApi;
-        this.router.navigate(['/newsletter'])
+        // this.router.navigate(['/newsletter'])
+        location.reload();
       }
     )
   }

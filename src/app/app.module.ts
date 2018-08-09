@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
@@ -19,6 +19,9 @@ import { NewsletterEditComponent } from './newsletter-edit/newsletter-edit.compo
 import { CalendarComponent } from './calendar/calendar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { componentFactoryName } from '../../node_modules/@angular/compiler';
+
 
 
 
@@ -29,7 +32,7 @@ const routes: Routes = [
     component: UserDetailsComponent
   },
   {
-    path:'',
+    path:'user',
     component: UserComponent
   },
   {
@@ -63,8 +66,11 @@ const routes: Routes = [
   {
     path:'aboutpage',
     component: AboutUsComponent
+  },
+  {
+    path:'',
+    component: HomeComponent
   }
-  
 ]
 
 @NgModule({
@@ -80,6 +86,7 @@ const routes: Routes = [
     CalendarComponent,
     AboutUsComponent,
     NavbarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

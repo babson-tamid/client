@@ -63,6 +63,7 @@ export class UploadImagesComponent implements OnInit {
     
         this.uploader.uploadAll();
         // window.location.reload();
+        location.reload();
     
       }
 

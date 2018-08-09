@@ -1,37 +1,41 @@
  
- <div class="userData" *ngIf= 'theActualUser' >
-
-  <p>User: {{theActualUser.email}}</p>
-  <p>Name: {{theActualUser.name}}</p>
-  <p>Position: {{theActualUser.position}}</p>
-  <p>Graduation Date : {{theActualUser.gradDate}}</p>
-  <p>Phone Number: {{theActualUser.phoneNum}}</p>
-  <p>LinkedIn URL: {{theActualUser.linkedInUrl}}</p>
+<div id="whole-page">
 
   
-<div class="profileImg" *ngIf="theActualUser.profilePic.length > 0">
+  <div class="userData" *ngIf= 'theActualUser' >
+    
+    <p>User: {{theActualUser.email}}</p>
+    <p>Name: {{theActualUser.name}}</p>
+    <p>Position: {{theActualUser.position}}</p>
+    <p>Graduation Date : {{theActualUser.gradDate}}</p>
+    <p>Phone Number: {{theActualUser.phoneNum}}</p>
+    <p>LinkedIn URL: {{theActualUser.linkedInUrl}}</p>
+    
+    
+    <div class="profileImg" *ngIf="theActualUser.profilePic.length > 0">
+      
+      <img [src]="theActualUser.profilePic" alt="profilePic">
+      <button (click)="removePic(theActualUser._id)">Remove Picture</button>
+    </div>
+    
+    
+  </div>
+  <div *ngIf="theActualUser.profilePic.length === 0">
+    <app-upload-images></app-upload-images>
+  </div>
+  <!-- <form (submit)="uploadResume()">
+    
+    <label> Resume </label>
+    <input type="file" name="image" ng2FileSelect [uploader]="uploader" />
+    <br>
+    <button>Submit Resume</button>
+  </form> -->
   
-  <img [src]="theActualUser.profilePic" alt="profilePic">
-  <button>Remove Picture</button>
+  
+  <!-- <img src="{{theActualUser.resume}}" alt="resume"> -->
+  
+  
 </div>
-  
-
- </div>
-<div *ngIf="theActualUser.profilePic.length === 0">
- <app-upload-images></app-upload-images>
-</div>
-<!-- <form (submit)="uploadResume()">
-
- <label> Resume </label>
-  <input type="file" name="image" ng2FileSelect [uploader]="uploader" />
-  <br>
-  <button>Submit Resume</button>
-</form> -->
-
-
-<!-- <img src="{{theActualUser.resume}}" alt="resume"> -->
-
-
 
 
 
