@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { FileUploader } from "ng2-file-upload";
 import { isNgTemplate } from '../../../node_modules/@angular/compiler';
 import {UserComponent} from '../user/user.component';
-
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-upload-images',
   templateUrl: './upload-images.component.html',
@@ -23,7 +23,7 @@ export class UploadImagesComponent implements OnInit {
   }
 
   uploader: FileUploader = new FileUploader({
-    url: 'http://localhost:3000/api/profilePic/',
+    url: `${environment.apiBase}/api/profilePic/`,
     itemAlias: "image"
   });
 
@@ -32,23 +32,9 @@ export class UploadImagesComponent implements OnInit {
 
   uploadProfilePic(){
     
-    // this is comment
-        console.log("before:", this.uploader);
-    
-        // this.uploader = new FileUploader({
-        //   url: 'http://localhost:3000/api/resume',
-        //   itemAlias: "image"
-        // });
-    
-    
-        console.log('after: ',this.uploader)
-    
-    
-    
         this.uploader.onBuildItemForm = (item, form) => {
           console.log('building it breh')
         }
-    
     
         this.uploader.onSuccessItem =(item, form)=>{
           console.log('SUCCESS')
@@ -56,7 +42,6 @@ export class UploadImagesComponent implements OnInit {
           // window.location.reload();
 
         }
-    
         this.uploader.onErrorItem = (item, res)=>{
           console.log("ERRRROR")
         }

@@ -24,24 +24,30 @@
       <!-- <button>Submit</button> -->
       <!-- </form> -->
       
-      <button> Post It!</button>
+      <button class="btn-primary"> Post It!</button>
     </form>
   </div>
+
+  <br>
+  <br>
   
   <!-- list Newsletter -->
   
-  <div *ngFor="let oneNews of newsletter">
+  <div *ngFor="let oneNews of newsletters">
     
-    {{ oneNews.title}} by {{ oneNews.creator }}  <p *ngIf="role === 'admin'"> <a [routerLink]="['/edit', oneNews._id]">Edit</a></p>
+    <h4>{{ oneNews.title}} by {{ oneNews.creator }} </h4>
+    <h5>{{oneNews.updatedAt}}</h5>
+    <p *ngIf="role === 'admin'"> <a [routerLink]="['/edit', oneNews._id]">Edit</a></p>
+    <br>
     <img src={{oneNews.imgPath}}>
     <br>
     <br>
     
     <div *ngIf="role === 'admin'">
-      <button (click)=deletePost(oneNews._id)>Delete Post</button>
+      <button class="btn-primary" (click)=deletePost(oneNews._id)>Delete Post</button>
       
     </div>
-    
+    <br>
     
     
     

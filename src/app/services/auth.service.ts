@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
@@ -17,52 +18,51 @@ export class AuthService {
   }
 
   checkemail(user) {
-    return this.http.post(`http://localhost:3000/api/checkemail`, user)
+    return this.http.post(`${environment.apiBase}/api/checkemail`, user)
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   signup(user) {
     console.log('hey: ', user)
-    return this.http.post(`http://localhost:3000/api/user/${user._id}/finish-signup`, user, {withCredentials: true})
+    return this.http.post(`${environment.apiBase}/api/user/${user._id}/finish-signup`, user, {withCredentials: true})
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   apply(user){
-    return this.http.post(`http://localhost:3000/api/apply`, user)
+    return this.http.post(`${environment.apiBase}/api/apply`, user)
     .map(res => res.json())
     .catch(this.handleError);
   }
 
   login(user) {
-    return this.http.post(`http://localhost:3000/api/login`, user, {withCredentials: true})
+    return this.http.post(`${environment.apiBase}/api/login`, user, {withCredentials: true})
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   logout() {
-    return this.http.post(`http://localhost:3000/api/logout`, {}, {withCredentials: true} )
+    return this.http.post(`${environment.apiBase}/api/logout`, {}, {withCredentials: true} )
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   userDetails(user) {
-    return this.http.post(`http://localhost:3000/api/userDetails/`, user, {withCredentials: true} )
+    return this.http.post(`${environment.apiBase}/api/userDetails/`, user, {withCredentials: true} )
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   deleteUserImage(id) {
-    console.log("user id from service when deleting image ******************* ", id)
-    return this.http.post(`http://localhost:3000/api/deleteProfilePic/${id}`, {withCredentials: true} )
+    return this.http.post(`${environment.apiBase}/api/deleteProfilePic/${id}`, {withCredentials: true} )
     .map(res => res.json())
     .catch(this.handleError);
   }
 
   isLoggedIn() {
     console.log("checking if logged in from auth service")
-    return this.http.get(`http://localhost:3000/api/loggedin`, {withCredentials: true})
+    return this.http.get(`${environment.apiBase}/api/loggedin`, {withCredentials: true})
       .map((res) => {
         console.log("response when checking log in", res)
         return JSON.parse(res._body)
@@ -77,20 +77,15 @@ export class AuthService {
   }
 
   aboutUs(){
-    return this.http.get(`http://localhost:3000/api/aboutpage`)
+    return this.http.get(`${environment.apiBase}/api/aboutpage`)
     .map(res => res.json())
     .catch(this.handleError);
   }
-
-
 
   getPrivateData() {
     return this.http.get(`/private`)
       .map(res => res.json())
       .catch(this.handleError);
   }
-
-
-
 
 }

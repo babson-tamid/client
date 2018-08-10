@@ -8,6 +8,9 @@ width: 15vw;
     margin: 30px 50px;
 }
 
-
+.btn-primary {
+    background-color: #0A6545;
+    border-color: #0A6545;
+}
 
 

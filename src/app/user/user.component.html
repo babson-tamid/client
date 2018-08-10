@@ -1,7 +1,7 @@
-<!-- <button (click)="logMeOut()">Log Out</button> -->
+<!-- 
+<div>
 
-
-<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#myModal">User Signup</button>
+<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#myModal">User Sign-up</button>
 
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -40,13 +40,11 @@
 
                 <div class="form-group">
 
-                  <!-- <label> Email Address </label> -->
                   <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" [(ngModel)]="theActualUser.email" name="email">
 
                 </div>
 
                 <div class="form-group">
-                  <!-- <label> Password </label> -->
                   <input type="password" class="form-control" id="inputPassword" placeholder="Password" [(ngModel)]="theActualUser.password"
                     name="password">
 
@@ -89,7 +87,6 @@
             <div *ngIf="theError">{{theError}}</div>
 
             <br>
-            <!-- <p class="botto-text"> Designed by Sunil Rajput</p> -->
           </div>
         </div>
         <div class="modal-footer">
@@ -99,3 +96,84 @@
 
     </div>
   </div>
+</div>
+
+</div> -->
+
+
+
+<div class="container">
+  <h1 class="form-heading">Email Verification</h1>
+  <div class="login-form">
+    <div class="main-div">
+      <div class="panel">
+
+        <div *ngIf="theActualUser">
+          <form (ngSubmit)="checkEmail()">
+
+            
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" [(ngModel)]="checkemailUser.email" name="email"
+            />
+            <br>
+            <button type="submit" class="btn btn-primary"> Check Email </button>
+          </form>
+        </div>
+        <br>
+        <h2>Sign Up</h2>
+        <p>Please enter the following Information</p>
+      </div>
+      <form id="Login" (ngSubmit)="tryToSignUp()" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+
+          <!-- <label> Email Address </label> -->
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" [(ngModel)]="theActualUser.email" name="email">
+
+        </div>
+
+        <div class="form-group">
+          <!-- <label> Password </label> -->
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password" [(ngModel)]="theActualUser.password"
+            name="password">
+
+        </div>
+
+        <div class="form-group">
+
+          <input type="text" class="form-control" id="inputPassword" placeholder="Full Name" [(ngModel)]="theActualUser.name" name="name">
+
+        </div>
+
+        <div class="form-group">
+
+          <input type="text" class="form-control" id="inputPassword" placeholder="Graduation Date" [(ngModel)]="theActualUser.gradDate"
+            name="gradDate">
+
+        </div>
+
+        <div class="form-group">
+
+          <input type="text" class="form-control" id="inputPassword" placeholder="Phone number" [(ngModel)]="theActualUser.phoneNum"
+            name="phoneNum">
+
+        </div>
+
+        <div class="form-group">
+
+          <input type="text" class="form-control" id="inputPassword" placeholder="LinkedIn Url" [(ngModel)]="theActualUser.linkedInUrl"
+            name="linkedInUrl">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Apply Now</button>
+
+      </form>
+    </div>
+
+    <hr>
+
+    <div *ngIf="theError">{{theError}}</div>
+
+    <br>
+  </div>
+</div>

@@ -2,7 +2,7 @@
 <div id="whole-page">
 
   
-  <div class="userData" *ngIf= 'theActualUser' >
+  <div class="userData" *ngIf='theActualUser' >
     
     <p>User: {{theActualUser.email}}</p>
     <p>Name: {{theActualUser.name}}</p>
@@ -15,7 +15,9 @@
     <div class="profileImg" *ngIf="theActualUser.profilePic.length > 0">
       
       <img [src]="theActualUser.profilePic" alt="profilePic">
-      <button (click)="removePic(theActualUser._id)">Remove Picture</button>
+      <br>
+      <br>
+      <button (click)="removePic(theActualUser._id)" class="btn btn-primary">Remove Picture</button>
     </div>
     
     
