@@ -1,7 +1,16 @@
-.userData > img{
+.profileImg > img{
 height: 200px;
 width: 15vw;
 
+}
+
+#whole-page {
+    margin: 30px 50px;
+}
+
+.btn-primary {
+    background-color: #0A6545;
+    border-color: #0A6545;
 }
 
 

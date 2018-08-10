@@ -1,0 +1,50 @@
+.buttonApply{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.buttonUser{
+    float: right;
+}
+
+
+.buttons{
+    align-items: center;
+}
+
+.btn-primary{
+    background-color: grey;
+    border-color: #0A6545;
+
+}
+
+.groupImg{
+    /* border: 2px #0A6545 solid; */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container{
+    background-color: #fafafa;
+    margin-top: 40px;
+    border-radius: 2%;
+}
+
+.p {
+    font-size: 13px;
+}
+
+.col-md-6 {
+    width:150px;
+}
+
+.col-md-6 p{
+    text-align:center;
+}
+
+.col-md-6 h2{
+    text-align:center;
+}
+
+

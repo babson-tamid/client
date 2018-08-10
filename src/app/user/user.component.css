@@ -1,0 +1,30 @@
+.btn-outline-success{
+  background-color: #0A6545;
+  color:white;
+  border-color:#0A6545;
+}
+
+.modal {
+  width: 750px;
+  text-align:center;
+  }
+
+.btn-primary{
+  background-color: #0A6545;
+  border-color: #0A6545;
+}
+
+.blah-blah {
+  /* z-index: 100; */
+}
+
+.modal-backdrop {
+  /* display: none; */
+
+  /* z-index: -1; */
+}
+
+.modal-dialog {
+  /* border: 3px red solid; */
+  /* z-index: 1100 !important; */
+}

@@ -1,47 +1,52 @@
+<div id='about-us-page'>
 
 
-<h3>What is Tamid?</h3>
-
-  <p>The TAMID Group is a student-led, non-profit organization, 
-    which creates relationships between business-minded students 
-    and the Israeli economy/start up nation. Founded in 2008, nearly thirty 
-    elite U.S. universities have TAMID on their campuses. TAMID gives 
-    students hands on experience with the Israeli start up nation and economy.</p>
-
-
-    <div class="members" *ngFor="let oneUser of allUsers">
     
-      <div *ngIf="oneUser.role === 'admin'">
-        
-        <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar">
-        <!-- <img src="{{oneUser.profilePic}}" alt="profilePic"> -->
+    <br>
+    <h1 class="text-center">Executive Officers</h1>
+    <hr>
+    <br>
+    <div class="about-us-users-wrapper" >
+      <div *ngFor="let oneUser of admins">
+        <div class="about-us-user">
+          
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-l2s2boPCJRrS3G9-NK6LoR1xPaQewndvV73qKDNtov_fjVelZQ" alt="Avatar">
+          <!-- <img src="{{oneUser.profilePic}}" alt="profilePic"> -->
+          <br>
+          <br>
+          <h3>{{oneUser.name}}</h3>
+          <p>{{oneUser.position}}</p>
+          
+
+        </div>
+
         <br>
+
+
+      </div> 
+    </div>
+
+    <h1 class="text-center">Members</h1>
+    <hr>
+    <br>
+    <div class="about-us-users-wrapper" >
+      <div *ngFor="let oneUser of members">
+        <div class="about-us-user">
+          
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-l2s2boPCJRrS3G9-NK6LoR1xPaQewndvV73qKDNtov_fjVelZQ" alt="Avatar">
+          <!-- <img src="{{oneUser.profilePic}}" alt="profilePic"> -->
+          <br>
+          <br>
+          <h3>{{oneUser.name}}</h3>
+          <p>{{oneUser.position}}</p>
+          
+
+        </div>
+
         <br>
-        <h3>{{oneUser.name}}</h3>
-        <p>{{oneUser.position}}</p>
-        
-
-      </div>
-
-      <br>
 
 
-    </div> 
+      </div> 
+    </div>
 
-    <div *ngFor="let oneUser of allUsers">
-
-      <div *ngIf="oneUser.role === 'member'">
-
-        <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar">
-        <!-- <img src="{{oneUser.profilePic}}" alt="profilePic"> -->
-        <br>
-        <br>
-        <h3>{{oneUser.name}}</h3>
-        <p>{{oneUser.position}}</p>
-        
-
-      </div>
-
-    </div> 
-
-
+</div>

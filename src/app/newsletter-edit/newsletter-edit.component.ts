@@ -64,15 +64,15 @@ export class NewsletterEditComponent implements OnInit {
   }
 
 
-  deletePost() {
-    this.newsService.deleteNews()
-      .subscribe(
-        newsObjFromApi => {
-          this.newsletter = newsObjFromApi;
-          this.router.navigate(['/newsletter'])
-        }
-      )
-  }
+  // deletePost() {
+  //   this.newsService.deleteNews()
+  //     .subscribe(
+  //       newsObjFromApi => {
+  //         this.newsletter = newsObjFromApi;
+  //         this.router.navigate(['/newsletter'])
+  //       }
+  //     )
+  // }
 
 
   ngOnInit() {

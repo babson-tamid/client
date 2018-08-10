@@ -11,7 +11,8 @@ import { AuthService } from '../services/auth.service';
 export class AboutUsComponent implements OnInit {
 
 
-  allUsers:any;
+  admins:any;
+  members:any;
 
   
 
@@ -27,7 +28,8 @@ export class AboutUsComponent implements OnInit {
   getList(){
     this.myAuthService.aboutUs()
     .subscribe((res)=>{
-      this.allUsers = res.reverse();
+      this.admins = res.admins;
+      this.members = res.members;
   })
   }
 

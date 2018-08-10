@@ -13,12 +13,14 @@ import { AuthService } from '../services/auth.service';
 })
 export class NewsletterComponent implements OnInit {
 
-newsletter:any ={
+newsletter:any = {
   creator: '',
   title:'',
   description:'',
-  imgPath: ''
+  imgPath: '',
+  _id: ''
 }
+newsletters: any = [];
 
 role: String;
 
@@ -39,7 +41,7 @@ uploader: FileUploader = new FileUploader({
     .subscribe(
       newsObjectsFromApi => {
         console.log('blah: ', newsObjectsFromApi)
-        this.newsletter = newsObjectsFromApi;
+        this.newsletters = newsObjectsFromApi;
         this.router.navigate(['/newsletter'])
       }
     )
@@ -48,6 +50,7 @@ uploader: FileUploader = new FileUploader({
 
 
   createPost(){
+    console.log('begin: ', this.newsletter)
     this.uploader.onBuildItemForm = (item, form) => {
       form.append('creator', this.newsletter.creator);
       form.append('title', this.newsletter.title);
@@ -56,15 +59,20 @@ uploader: FileUploader = new FileUploader({
 
 
     this.uploader.onSuccessItem =(item, form)=>{
+      console.log('in success')
       this.newsletter = {
         creator: '',
         title:'',
-        description:''
+        description:'',
+        imgPath: ''
       }
       this.router.navigate(['/newsletter']);
+      location.reload();
+
     }
 
     this.uploader.onErrorItem = (item, res)=>{
+      console.log("in error")
       console.log("ERRRROR")
     }
 
@@ -79,12 +87,14 @@ uploader: FileUploader = new FileUploader({
   }
 
 
-  deletePost(){
-    this.newsService.deleteNews()
+  deletePost(id){
+    console.log('newsletter info ============ ', id)
+    this.newsService.deleteNews(id)
     .subscribe(
       newsObjFromApi => {
         this.newsletter = newsObjFromApi;
-        this.router.navigate(['/newsletter'])
+        // this.router.navigate(['/newsletter'])
+        location.reload();
       }
     )
   }

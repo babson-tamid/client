@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +18,10 @@ import { UploadImagesComponent } from './upload-images/upload-images.component';
 import { NewsletterEditComponent } from './newsletter-edit/newsletter-edit.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { componentFactoryName } from '../../node_modules/@angular/compiler';
+
 
 
 
@@ -28,7 +32,7 @@ const routes: Routes = [
     component: UserDetailsComponent
   },
   {
-    path:'',
+    path:'user',
     component: UserComponent
   },
   {
@@ -45,6 +49,11 @@ const routes: Routes = [
 
   },
   {
+    path:'navbar',
+    component: NavbarComponent
+
+  },
+  {
     path:'edit/:id',
     component: NewsletterEditComponent
 
@@ -57,8 +66,11 @@ const routes: Routes = [
   {
     path:'aboutpage',
     component: AboutUsComponent
+  },
+  {
+    path:'',
+    component: HomeComponent
   }
-  
 ]
 
 @NgModule({
@@ -73,6 +85,8 @@ const routes: Routes = [
     NewsletterEditComponent,
     CalendarComponent,
     AboutUsComponent,
+    NavbarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

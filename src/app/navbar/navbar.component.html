@@ -1,0 +1,90 @@
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Babson TAMID</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutpage">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/newsletter">Newsletter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/events">Events</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/apply">Apply</a>
+        </li>
+        <div *ngIf="theActualUser">
+        <li class="nav-item">
+            <a class="nav-link" href="/userDetails">User Information</a>
+            <button (click)="logMeOut()">Log Out</button>
+        </li>
+        
+      </div>
+      
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Login
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/login">Login</a>
+              <a class="dropdown-item" href="/signup">Sign Up</a>
+            </div>
+           
+          </li>
+      </ul>
+  
+      <!-- <button (click)=logout()>Log Out</button> -->
+    <!-- </div> -->
+  <!-- </nav> -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      
+    <img src="https://res.cloudinary.com/dkops7cmz/image/upload/v1533837221/forale.png">
+    <a class="navbar-brand" [routerLink]="['/']">Babson TAMID</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/aboutpage']">About us</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/newsletter']">Newsletter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/events']">Events</a>
+          </li>
+          <div *ngIf="theActualUser">
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/userDetails']">User Information</a>
+                  
+                </li>
+          </div >
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Login
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" [routerLink]="['/login']">Login</a>
+              <a class="dropdown-item" [routerLink]="['/apply']">Application</a>
+            </div>
+          </li>
+          <div *ngIf="theActualUser">
+          <li>
+              <button type="button" class="btn btn-secondary" (click)="logMeOut()">Log Out</button>
+
+          </li>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+
+  <!-- *ngIf="theActualUser === " -->

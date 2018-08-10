@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
     phoneNum:''
 
   }
+  
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -29,9 +30,11 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginUser)
     .subscribe((res)=>{
        this.theActualUser = res
+       location.reload()
       this.router.navigate(['/'])
+
     });
-    
+  
     
   }
 

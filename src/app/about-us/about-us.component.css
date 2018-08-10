@@ -4,20 +4,25 @@ img{
     border-radius: 50%;
 }
 
-.members{
-    display: inline-block;
-    /* justify-content:space-around; */
-    /* flex-direction: row; */
-    border: 1px grey solid;
+.about-us-user{
+    /* border: .5px grey dashed; */
     /* width: 310px; */
     /* height:335px; */
     text-align: center;
     /* padding-top: 30px; */
-    
-    
-
-
+    margin-right: 3px;
+    width: 250px;  
+    max-height: 400px;  
 }
 
+.about-us-users-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
+#about-us-page {
+    margin: 30px 50px;
+}
 
